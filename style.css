@@ -1,0 +1,253 @@
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+}
+
+.container {
+    background: linear-gradient(135deg, 
+    rgba(252,255,244,1) 0%,
+    rgba(233,233,206,1) 100%);
+    position: relative;
+    display: grid;
+    grid-template-rows: 0.25fr 5fr;
+    overflow: auto;
+}
+
+.header {
+    height: fit-content;
+    width: 100vw;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(135deg, 
+    rgba(206,220,231,1) 0%,
+    rgba(89,106,114,1) 100%);
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 0.3vmin black;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 6vmin;
+}
+
+.libraryObjectGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    overflow: auto;
+    padding: 2vmin;
+    gap: 2vmin;
+}
+
+#bookSubmit {
+    font-size: 2vmin;
+    background: linear-gradient(135deg, 
+    rgba(179,220,237,0.25) 0%,
+    rgba(41,184,229,0.45) 50%,
+    rgba(188,224,238,0.65) 100%); 
+    border-radius: 1vmin;
+    box-shadow: 0 4vmin 50vmin 100vmin rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5.9px);
+    border: 0.3vmin solid white;
+    display: none;
+    position: fixed;
+    padding: 2vmin 2vmin 1vmin 2vmin;
+    z-index: 1;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, 0);
+    width: fit-content;
+    text-align: center;
+    color: white;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+#bookSubmit:hover {
+    background: linear-gradient(135deg, 
+    rgba(179,220,237,0.45) 0%,
+    rgba(41,184,229,0.65) 50%,
+    rgba(188,224,238,0.85) 100%); 
+}
+
+#bookTitle,
+#bookAuthor,
+#pageCount {
+    width: 100%;
+    padding: 0.25vmin 1vmin 0.25vmin 1vmin;
+}
+
+input {
+    border-radius: 1vmin;
+    border: 0.3vmin solid black;
+}
+
+input:hover {
+    box-shadow: inset 0 0.2vmin 0.3vmin black;
+}
+
+#bookRead {
+    cursor: pointer;
+    width: 2vmin;
+    height: 2vmin;
+}
+
+#bookTitle,
+#bookAuthor,
+#pageCount,
+#bookRead,
+#formSubmitButton {
+    margin-bottom: 1vmin;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 0.3vmin solid black;
+    border-radius: 1vmax;
+    cursor: pointer;
+    font-size: 2vmin;
+}
+
+.openBookForm,
+#formSubmitButton {
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5vmin 1vmin 0.5vmin 1vmin;
+}
+
+.openBookForm:hover,
+#formSubmitButton:hover {
+    border: 0.3vmin solid black;
+    box-shadow: 0.3vmin 0.3vmin black;
+}
+
+.openBookForm:active,
+#formSubmitButton:active {
+    border: 0.2vmin solid black;
+    box-shadow: inset 0.3vmin 0.3vmin black;
+}
+
+footer {
+    font-size: 1.5vmin;
+    font-style: italic;
+}
+
+.book {
+    margin: 0;
+    background: linear-gradient(135deg, 
+    rgba(240,249,255,1) 0%,
+    rgba(203,235,255,1) 47%,
+    rgba(161,219,255,1) 100%); 
+    list-style: none;
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
+    padding: 1vmin;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 1vmin;
+    width: 100%;
+    gap: 2vmin;
+    font-size: 2.5vmin;
+    box-shadow: 0.3vmin 0.3vmin black;
+}
+
+.readToggle {
+    cursor: pointer;
+    padding: 0 0.5vmin 0 0.5vmin;
+    border-radius: 0.5vmin;
+    color: white;
+    border: 0.3vmin solid black;
+}
+
+.readToggle:hover {
+    opacity: 0.75;
+    box-shadow: 0.3vmin 0.3vmin black;
+}
+
+.readToggle:active {
+    box-shadow: inset 0.3vmin 0.3vmin black;
+}
+
+.deleteBook {
+    justify-self: end;
+    align-self: end;
+    position: relative;
+    width: 2vmin;
+    height: 2vmin;
+    border: 0.3vmin solid transparent;
+    box-shadow:
+        0 0 0 0.2vmin,
+        inset -0.2vmin 0 0,
+        inset 0.2vmin 0 0;
+    border-radius: 0.25vmin;
+    top: -0.25vmin;
+}
+
+.deleteBook::after,
+.deleteBook::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute
+}
+
+.deleteBook::after {
+    background: currentColor;
+    border-radius: 0.3vmin;
+    width: 2.6vmin;
+    height: 0.4vmin;
+    top: -0.5vmin;
+    left: -0.6vmin;
+}
+
+.deleteBook::before {
+    width: 2vmin;
+    height: 0.5vmin;
+    border: 0.3vmin solid;
+    border-bottom: transparent;
+    border-top-left-radius: 0.3vmin;
+    border-top-right-radius: 0.3vmin;
+    top: -0.9vmin;
+    left: -0.3vmin;
+}
+
+.bookInfo {
+    height: fit-content;
+    width: fit-content;
+}
+
+.deleteBook:hover {
+    box-shadow:
+    0 0 0 0.2vmin,
+    inset -0.2vmin 0 0,
+    inset 0.2vmin 0 0,
+    0vmin -0.6vmin 0.65vmin red;
+}
+
+.deleteBook:hover::after {
+    transform: rotate(45deg);
+    top: -1vmin;
+    left: 0vmin;
+}
+
+.deleteBook:hover::before {
+    transform: rotate(45deg);
+    top: -1.35vmin;
+    left: 0.5vmin;
+}
