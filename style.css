@@ -177,7 +177,6 @@ footer {
 }
 
 .readToggle:hover {
-    opacity: 0.75;
     box-shadow: 0.3vmin 0.3vmin black;
 }
 
