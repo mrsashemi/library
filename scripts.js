@@ -22,13 +22,15 @@ if (str != null) {
 }
 
 /*Create a book object constructor*/
-function Book(listNum, title, author, pageCount, read) {
-    this.listNum = listNum
-    this.title = title,
-    this.author = `by ${author}`,
-    this.pageCount = `${pageCount} pages`,
-    read ? this.read = "Read" : this.read = "Not Read";
-};
+class Book {
+    constructor(listNum, title, author, pageCount, read) {
+        this.listNum = listNum;
+        this.title = title;
+        this.author = `by ${author}`;
+        this.pageCount = `${pageCount} pages`;
+        read ? this.read = "Read" : this.read = "Not Read";
+    }
+}
 
 /*Create a function that iterates through the array holding the objects.
 For each object in the array, create and append an element to the parent in the document.*/
